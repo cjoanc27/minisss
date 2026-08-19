@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mini Factory Game - Pilot-First Phase 1</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <section id="introScreen" class="panel intro-screen">
+        <h1>Production Process Exercise</h1>
+        <p>In this part of the study, you will work on a series of short production tasks.</p>
+        <p>Your goal is to learn a reliable way to set up a production process. You do not need any prior factory, engineering, or gaming experience.</p>
+        <div class="routine">
+          <h2>A reliable way to set up a new production process</h2>
+          <p>During these tasks, use a <strong>PILOT-FIRST</strong> approach:</p>
+          <ol>
+            <li>Build one complete pilot line.</li>
+            <li>Run it to discover hidden process requirements.</li>
+            <li>Report and correct the issue while the process is still small.</li>
+            <li>Verify the corrected pilot.</li>
+            <li>Scale the proven process.</li>
+          </ol>
+        </div>
+        <button type="button" id="startButton" class="action-button">Start</button>
+      </section>
+
+      <section id="gameScreen" class="game-screen hidden" aria-label="Factory game">
+        <section class="panel instructions" aria-labelledby="stageTitle">
+          <div class="level-meta">
+            <span id="stageBadge" class="level-badge">Stage 1</span>
+            <span id="stageStatus" class="level-status">In progress</span>
+          </div>
+          <h1 id="stageTitle"></h1>
+          <div id="stageInstructions"></div>
+        </section>
+
+        <section class="factory" aria-label="Factory grid">
+          <div id="board" class="board" role="grid" aria-label="Factory board"></div>
+        </section>
+
+        <section class="panel controls" aria-label="Tool controls">
+          <div class="tool-group" role="group" aria-label="Tools">
+            <button type="button" class="tool-button selected" data-tool="right" aria-pressed="true">Belt &rarr;</button>
+            <button type="button" class="tool-button" data-tool="left" aria-pressed="false">Belt &larr;</button>
+            <button type="button" class="tool-button" data-tool="up" aria-pressed="false">Belt &uarr;</button>
+            <button type="button" class="tool-button" data-tool="down" aria-pressed="false">Belt &darr;</button>
+            <button type="button" id="wasteTool" class="tool-button hidden" data-tool="waste" aria-pressed="false">Scrap Bin</button>
+            <button type="button" id="coolingTool" class="tool-button hidden" data-tool="cooling" aria-pressed="false">Cooling Tunnel</button>
+            <button type="button" class="tool-button" data-tool="erase" aria-pressed="false">Erase</button>
+          </div>
+          <div class="action-group" role="group" aria-label="Run controls">
+            <button type="button" id="pilotRunButton" class="action-button hidden">RUN PILOT</button>
+            <button type="button" id="runButton" class="action-button">RUN</button>
+            <button type="button" id="resetButton" class="action-button secondary">RESET</button>
+            <button type="button" id="reportButton" class="action-button hidden">REPORT ISSUE</button>
+            <button type="button" id="continueButton" class="action-button hidden">Continue</button>
+          </div>
+          <div id="lessonPanel" class="lesson-panel hidden"></div>
+          <div id="feedback" class="feedback neutral" role="status" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section id="completeScreen" class="panel intro-screen hidden">
+        <h1>Phase 1 Complete</h1>
+        <p>Across these production tasks, you used a <strong>PILOT-FIRST</strong> approach:</p>
+        <ol>
+          <li>Build one complete pilot line.</li>
+          <li>Run it to discover hidden process requirements.</li>
+          <li>Report and correct the issue while the process is still small.</li>
+          <li>Verify the corrected pilot.</li>
+          <li>Scale the proven process.</li>
+        </ol>
+        <p>The key lesson is that some production problems only become visible when the process actually runs.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
